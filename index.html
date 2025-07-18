@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chrome Dino Game - Mobile Enhanced</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">Score</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">High Score</span>
+                    <span id="highScore" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Level</span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Lives</span>
+                    <span id="lives" class="stat-value">3</span>
+                </div>
+            </div>
+            <div class="difficulty-selector">
+                <label>Difficulty:</label>
+                <select id="difficultySelect">
+                    <option value="easy">Easy</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Hard</option>
+                    <option value="extreme">Extreme</option>
+                </select>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="game-ui">
+            <div class="power-ups">
+                <div class="power-up-item" id="speedBoostBtn">
+                    <span class="power-up-icon">⚡</span>
+                    <span id="speedBoost" class="power-up-count">0</span>
+                </div>
+                <div class="power-up-item" id="shieldBtn">
+                    <span class="power-up-icon">🛡️</span>
+                    <span id="shield" class="power-up-count">0</span>
+                </div>
+                <div class="power-up-item" id="slowMoBtn">
+                    <span class="power-up-icon">⏱️</span>
+                    <span id="slowMo" class="power-up-count">0</span>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-label">Level Progress</div>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="achievements">
+                <div id="achievementNotification" class="achievement-notification hidden">
+                    <span class="achievement-icon">🏆</span>
+                    <span class="achievement-text"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-controls">
+            <button id="jumpBtn" class="control-btn jump-btn">JUMP</button>
+            <button id="duckBtn" class="control-btn duck-btn">DUCK</button>
+            <button id="pauseBtn" class="control-btn pause-btn">⏸️</button>
+            <button id="soundToggle" class="control-btn sound-btn">🔊</button>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="control-group">
+                <h3>Controls</h3>
+                <div class="control-item">
+                    <strong>Desktop:</strong> <kbd>SPACE</kbd> or <kbd>↑</kbd> - Jump | <kbd>↓</kbd> - Duck
+                </div>
+                <div class="control-item">
+                    <strong>Mobile:</strong> Tap JUMP/DUCK buttons or tap power-ups to use
+                </div>
+                <div class="control-item">
+                    <strong>Power-ups:</strong> <kbd>1</kbd> - Speed Boost | <kbd>2</kbd> - Shield | <kbd>3</kbd> - Slow Motion
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
